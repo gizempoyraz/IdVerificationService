@@ -70,6 +70,11 @@ namespace IdVerificationService.Authorization.Users
             return user;
         }
 
+        public Task RegisterAsync(string name, string surname, string citizenId, int birthYear, bool v)
+        {
+            throw new NotImplementedException();
+        }
+
         private void CheckForTenant()
         {
             if (!AbpSession.TenantId.HasValue)
