@@ -31,6 +31,7 @@
         @await Html.PartialAsync("_SideBar.cshtml")
         <div class="content-wrapper">
             @await Html.PartialAsync("_Alerts.cshtml")
+ }
             @RenderBody()
         </div>
         @await Html.PartialAsync("_Footer.cshtml")
