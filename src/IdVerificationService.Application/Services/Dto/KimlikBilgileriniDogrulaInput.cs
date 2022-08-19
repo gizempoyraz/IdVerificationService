@@ -9,9 +9,16 @@ namespace IdVerificationService.Services.Dto
 {
     public class KimlikBilgileriniDogrulaInput
         {
+        [Required]
         public string Name { get; set; }
+
+        [Required]
         public string Surname { get; set; }
+
+        [Required]
         public int BirthYear { get; set; }
+
+        [Required]
         public long CitizenId { get; set; }
     }
 

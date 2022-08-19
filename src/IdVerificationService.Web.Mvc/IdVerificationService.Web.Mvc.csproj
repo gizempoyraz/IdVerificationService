@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\js\views\" />
-    <Folder Include="wwwroot\libs\" />
+    <Folder Include="wwwroot\libs\NewFolder\" />
     <Folder Include="wwwroot\view-resources\Views\_Bundles\" />
   </ItemGroup>
 </Project>
