@@ -1,5 +1,4 @@
-﻿
-(function ($) {
+﻿(function ($) {
     var _nviService = abp.services.app.nvi,
         l = abp.localization.getSource('IdVerificationService')
     _$modal = $('.container'),
@@ -8,12 +7,11 @@
 
 
     $(document).on('click', '.btn-valid', function (e) {
-
         var citizenId = $("#CitizenId").val();
         var name = $("#Name").val();
         var surname = $("#Surname").val();
         var birthYear = $("#BirthYear").val();
-        
+
         _nviService.kimlikBilgileriniDogrula(
             {
                 CitizenId: citizenId,
@@ -25,14 +23,16 @@
             //alert(result);
             if (result == false) {
                 swal({
-                    title: "Incorrect Entry",
-                    text: "Please review your information again!",
+                    title: "Hatalı giriş",
+                    text: "Bilgilerinizi gözden geçiriniz!",
                     icon: "error",
-                    button: "Try again!",
+                    button: "Tekrar Deneyin!",
                 });
+            }
+            else {
+                window.location.href = "/EmailorPhone/Index/";
 
-                   
-                }
+            }
         }).always(function () {
 
         });
