@@ -21,7 +21,7 @@
             }
         ).done(function (result) {
             //alert(result);
-            if (result == false) {
+            if (result == 'false') {
                 swal({
                     title: "Hatalı giriş",
                     text: "Bilgilerinizi gözden geçiriniz!",
@@ -30,7 +30,7 @@
                 });
             }
             else {
-                window.location.href = "/EmailorPhone/Index/";
+                window.location.href = "/EmailorPhone/Index?auth=" + result;
 
             }
         }).always(function () {

@@ -9,6 +9,6 @@ namespace IdVerificationService.Services
 {
     public interface INviAppService
     {
-        Task<bool> KimlikBilgileriniDogrula(KimlikBilgileriniDogrulaInput input);
+        Task<string> KimlikBilgileriniDogrula(KimlikBilgileriniDogrulaInput input);
     }
 }
