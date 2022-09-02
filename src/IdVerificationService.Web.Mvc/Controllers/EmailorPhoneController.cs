@@ -2,12 +2,15 @@
 using IdVerificationService.Services.Dto;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System;
 using System.Web;
 
 namespace IdVerificationService.Web.Controllers
 {
     public class EmailorPhoneController : IdVerificationServiceControllerBase
     {
+        public object HttpCacheability { get; private set; }
+
         public IActionResult Index(string auth)
         {
             try
@@ -20,7 +23,9 @@ namespace IdVerificationService.Web.Controllers
             {
                 return Redirect("/Validation");
             }
+
             
         }
+       
     }
 }

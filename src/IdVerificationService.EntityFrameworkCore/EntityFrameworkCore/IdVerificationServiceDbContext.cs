@@ -9,7 +9,9 @@ namespace IdVerificationService.EntityFrameworkCore
     public class IdVerificationServiceDbContext : AbpZeroDbContext<Tenant, Role, User, IdVerificationServiceDbContext>
     {
         /* Define a DbSet for each entity of the application */
-        
+        public DbSet<Person> Persons { get; set; }
+
+
         public IdVerificationServiceDbContext(DbContextOptions<IdVerificationServiceDbContext> options)
             : base(options)
         {

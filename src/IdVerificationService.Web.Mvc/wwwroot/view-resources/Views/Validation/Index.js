@@ -36,6 +36,12 @@
         }).always(function () {
 
         });
+
     });
+
+    //Response.Cache.SetCacheability(HttpCacheability.NoCache);
+    //Response.AppendHeader("Pragma", "no-cache")
+    //Response.Expires = -1;
+
 
 })(jQuery);
