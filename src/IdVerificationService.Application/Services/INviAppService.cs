@@ -10,5 +10,6 @@ namespace IdVerificationService.Services
     public interface INviAppService
     {
         Task<string> KimlikBilgileriniDogrula(KimlikBilgileriniDogrulaInput input);
+        PersonDto GetPersonByCitizenId(long citizenId);
     }
 }

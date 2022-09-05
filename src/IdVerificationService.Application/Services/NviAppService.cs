@@ -1,4 +1,6 @@
-﻿using IdVerificationService.Services.Dto;
+﻿using Abp.Domain.Repositories;
+using IdVerificationService.EntityFrameworkCore;
+using IdVerificationService.Services.Dto;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,10 +15,20 @@ namespace IdVerificationService.Services
 {
     public class NviAppService: IdVerificationServiceAppServiceBase, INviAppService
     {
-        public NviAppService()
-        {
+        private readonly IRepository<Person, int> _personRepository;
 
+        public NviAppService(IRepository<Person, int> personRepository)
+        {
+            _personRepository = personRepository;
         }
+
+        public PersonDto GetPersonByCitizenId(long citizenId)
+        {
+            var person = _personRepository.FirstOrDefault(x => x.CitizenId == citizenId);
+
+            return ObjectMapper.Map<PersonDto>(person);
+        }
+
         public async Task<string> KimlikBilgileriniDogrula(KimlikBilgileriniDogrulaInput input)
         {
             try

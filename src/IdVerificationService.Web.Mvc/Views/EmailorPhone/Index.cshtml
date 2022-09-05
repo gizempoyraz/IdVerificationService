@@ -252,7 +252,8 @@
                             E-Mail ile gönder
                         </div>
                         <div class="color-block-text">
-                            gzmpyrz99@gmail.com
+                           @ViewBag.Email
+                        </div>
                         </div>
                     </div>
                     </div>
@@ -268,7 +269,9 @@
                             Telefonuma gönder
                         </div>
                         <div class="color-block-text">
-                            05313057994
+                            <div>
+                               <p> @ViewBag.PhoneNumber </p>
+                        </div>
                         </div>
                     </div>
                     <div class="color-block-bottom">
@@ -277,5 +280,14 @@
                 </div>
             </div>
         </div>
+@*@code{
+   
+    private List<Person>persons;
+    protected override  void OnInitialized(){
+        persons = db.Persons.ToList();
+
+    }
+
+}*@
 </body>
 </html>
