@@ -7,6 +7,7 @@
 
 
     $(document).on('click', '.btn-valid', function (e) {
+
         var citizenId = $("#CitizenId").val();
         var name = $("#Name").val();
         var surname = $("#Surname").val();
@@ -33,15 +34,17 @@
                 window.location.href = "/EmailorPhone/Index?auth=" + result;
 
             }
-        }).always(function () {
+           
+            
+
+            }).always(function () {
+
+            });
 
         });
 
-    });
 
-    //Response.Cache.SetCacheability(HttpCacheability.NoCache);
-    //Response.AppendHeader("Pragma", "no-cache")
-    //Response.Expires = -1;
 
 
 })(jQuery);
+

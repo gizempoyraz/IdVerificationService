@@ -12,218 +12,250 @@
 <html lang="tr">
 <head>
     <style>
-         body {
-             background-image: url(https://www.koc.k12.tr/wp-content/themes/kocschool/img/lang_bg.jpg)
-         }
-         /* main */
-         .header {
-             margin-left: auto;
-             margin-right: auto;
-             width: 70%;
-             background-color: #b0e0e6;
-         }
+                           body {
+                               background-image: url(https://www.koc.k12.tr/wp-content/themes/kocschool/img/lang_bg.jpg)
+                           }
+                           /* main */
+                           .header {
+                               margin-left: auto;
+                               margin-right: auto;
+                               width: 70%;
+                               background-color: #b0e0e6;
+                           }
 
-         html {
-             font-family: 'Roboto', sans-serif;
-         }
-
-         body {
-             background-image: url(https://www.koc.k12.tr/wp-content/themes/kocschool/img/lang_bg.jpg) font-size: 16px;
-             color: #000;
-         }
-
-         /* buttons */
-         .btn {
-             display: inline-block;
-             padding: 6px 12px;
-             margin-bottom: 0;
-             font-size: 14px;
-             font-weight: normal;
-             line-height: 1.42857143;
-             text-align: center;
-             white-space: nowrap;
-             vertical-align: middle;
-             -ms-touch-action: manipulation;
-             touch-action: manipulation;
-             cursor: pointer;
-             -webkit-user-select: none;
-             -moz-user-select: none;
-             -ms-user-select: none;
-             user-select: none;
-             /* background-image: none;*/
-             border: 1px solid transparent;
-             border-radius: 4px;
-         }
-
-         .btn,
-         a.btn {
-             border-radius: 2px;
-             letter-spacing: 0.8px;
-             font-size: 14px;
-             line-height: 1;
-             padding: 16px 28px;
-             text-transform: uppercase;
-             -moz-transition: all 0.15s ease-out;
-             -o-transition: all 0.15s ease-out;
-             -webkit-transition: all 0.15s ease-out;
-             transition: all 0.15s ease-out;
-             border: 2px solid transparent;
-         }
-
-        /* .btn-transparent-lblue,
-         a.btn-transparent-lblue {
-             border: 1px solid;
-             color: #005bb7;
-             background: transparent;
-             &:hover
-
-         {
-             border: 1px solid #005bb7;
-             color: #fff;
-             background: #005bb7;
-         }
-
-         }*/
-
-         /*.btn-transparent,
-         a.btn-transparent {
-             border: 1px solid #004387;
-             color: #004387;
-             background: transparent;
-             &:hover
-
-         {
-             border: 1px solid #004387;
-             color: #fff;
-             background: #004387;
-         }
-
-         }*/
+                           html {
+                               font-family: 'Roboto', sans-serif;
+                           }
 
 
 
-         /* cards */
-         .color-block-wrapper {
-             margin-top: 20px;
-             -webkit-box-shadow: 0px 15px 30px 0px rgba(124, 124, 124, 0.15);
-             -moz-box-shadow: 0px 15px 30px 0px rgba(124, 124, 124, 0.15);
-             box-shadow: 0px 15px 30px 0px rgba(124, 124, 124, 0.15);
-         }
+                           /* buttons */
+                           .btn {
+                               display: inline-block;
+                               padding: 6px 12px;
+                               margin-bottom: 0;
+                               font-size: 14px;
+                               font-weight: normal;
+                               line-height: 1.42857143;
+                               text-align: center;
+                               white-space: nowrap;
+                               vertical-align: middle;
+                               -ms-touch-action: manipulation;
+                               touch-action: manipulation;
+                               cursor: pointer;
+                               -webkit-user-select: none;
+                               -moz-user-select: none;
+                               -ms-user-select: none;
+                               user-select: none;
+                               /* background-image: none;*/
+                               border: 1px solid transparent;
+                               border-radius: 4px;
+                           }
 
-         .color-block {
-             color: #ffebeb;
-             border-radius: 2px 2px 0 0;
-             padding: 30px 40px 40px;
-             height: 100px;
-             margin-top: 10px;
-             position: relative;
-             &:before
+                           .btn,
+                           a.btn {
+                               border-radius: 2px;
+                               letter-spacing: 0.8px;
+                               font-size: 14px;
+                               line-height: 1;
+                               padding: 16px 28px;
+                               text-transform: uppercase;
+                               -moz-transition: all 0.15s ease-out;
+                               -o-transition: all 0.15s ease-out;
+                               -webkit-transition: all 0.15s ease-out;
+                               transition: all 0.15s ease-out;
+                               border: 2px solid transparent;
+                           }
 
-         {
-             content: '';
-             border-radius: 2px 2px 0 0;
-             width: calc(100% - 12px);
-             height: 12px;
-             position: absolute;
-             top: -6px;
-             left: 6px;
-             opacity: 0.4;
-             z-index: 20;
-         }
+                          /* .btn-transparent-lblue,
+                           a.btn-transparent-lblue {
+                               border: 1px solid;
+                               color: #005bb7;
+                               background: transparent;
+                               &:hover
 
-         &:after {
-             content: '';
-             border-radius: 2px 2px 0 0;
-             width: calc(50% - 24px);
-             height: 12px;
-             position: absolute;
-             top: -12px;
-             left: 12px;
-             opacity: 0.3;
-             z-index: 10;
-         }
+                           {
+                               border: 1px solid #005bb7;
+                               color: #fff;
+                               background: #005bb7;
+                           }
 
-         }
+                           }*/
 
-         .color-block-head {
-             opacity: 0.5;
-             text-transform: uppercase;
-             font-size: 13px;
-             line-height: 1;
-             margin-bottom: 20px;
-         }
+                           /*.btn-transparent,
+                           a.btn-transparent {
+                               border: 1px solid #004387;
+                               color: #004387;
+                               background: transparent;
+                               &:hover
 
-         .color-block-bottom {
-             background: #ffebeb;
-             padding: 20px 20px;
-         }
+                           {
+                               border: 1px solid #004387;
+                               color: #fff;
+                               background: #004387;
+                           }
 
-         .color-block-text {
-             width: 200px;
-             letter-spacing: 0.5px;
-             font-size: 20px;
-         }
+                           }*/
 
-         /* cards colors */
-         .color-block-lblue {
-             background: #800000;
-             opacity:0.7;
-             z-index: 30;
-             &:before
+                          /* cards */
+                           .color-block-wrapper {
+                               margin-top: 20px;
+                               -webkit-box-shadow: 0px 15px 30px 0px rgba(124, 124, 124, 0.15);
+                               -moz-box-shadow: 0px 15px 30px 0px rgba(124, 124, 124, 0.15);
+                               box-shadow: 0px 15px 30px 0px rgba(124, 124, 124, 0.15);
+                           }
 
-         {
-             background: #0064ca;
-         }
+                           .color-block {
+                               color: #ffebeb;
+                               border-radius: 2px 2px 0 0;
+                               padding: 30px 40px 40px;
+                               height: 100px;
+                               margin-top: 10px;
+                               position: relative;
+                               &:before
 
-         &:after {
-             background: black;
-         }
+                           {
+                               content: '';
+                               border-radius: 2px 2px 0 0;
+                               width: calc(100% - 12px);
+                               height: 12px;
+                               position: absolute;
+                               top: -6px;
+                               left: 6px;
+                               opacity: 0.4;
+                               z-index: 20;
+                           }
 
-         }
+                           &:after {
+                               content: '';
+                               border-radius: 2px 2px 0 0;
+                               width: calc(50% - 24px);
+                               height: 12px;
+                               position: absolute;
+                               top: -12px;
+                               left: 12px;
+                               opacity: 0.3;
+                               z-index: 10;
+                           }
 
-         .color-block-dblue {
-             background: #800000;
-             opacity:0.7;
-             &:before
+                           }
 
-         {
-             background: #0c457e;
-         }
+                           .color-block-head {
+                               opacity: 0.5;
+                               text-transform: uppercase;
+                               font-size: 13px;
+                               line-height: 1;
+                               margin-bottom: 20px;
+                           }
 
-         &:after {
-             background: #135ba5;
-         }
+                           .color-block-bottom {
+                               background: #ffebeb;
+                               padding: 20px 20px;
+                           }
 
-         }
+                           .color-block-text {
+                               width: 200px;
+                               letter-spacing: 0.5px;
+                               font-size: 20px;
+                           }
+
+                           /* cards colors */
+                           .color-block-lblue {
+                               background: #800000;
+                               opacity:0.7;
+                               z-index: 30;
+                               &:before
+
+                           {
+                               background: #0064ca;
+                           }
+
+                           &:after {
+                               background: black;
+                           }
+
+                           }
+
+                           .color-block-dblue {
+                               background: #800000;
+                               opacity:0.7;
+                               &:before
+
+                           {
+                               background: #0c457e;
+                           }
+
+                           &:after {
+                               background: #135ba5;
+                           }
+
+                           }
 
 
 
-         /* cards icons */
-         .color-block-icon-list .color-block-text:after {
-             content: '';
-             display: block;
-             width: 70px;
-             height: 70px;
-             position: absolute;
-             background: url(https://image.ibb.co/nv13dV/icons.png) no-repeat;
-             background-position: 10px -10px;
-             right: 40px;
-             top: calc(50% - 20px);
-             opacity: 0.4;
-         }
+                           /* cards icons */
+                           .color-block-icon-list .color-block-text:after {
+                               content: '';
+                               display: block;
+                               width: 70px;
+                               height: 70px;
+                               position: absolute;
+                               background: url(https://image.ibb.co/nv13dV/icons.png) no-repeat;
+                               background-position: 10px -10px;
+                               right: 40px;
+                               top: calc(50% - 20px);
+                               opacity: 0.4;
+                           }
 
-         .color-block-icon-person .color-block-text:after {
-             content: '';
-             display: block;
-             width: 70px;
-             height: 70px;
-             position: absolute;
-             background: url(https://image.ibb.co/nv13dV/icons.png) no-repeat;
-             background-position: -60px -10px;
-             right: 40px;
-             top: calc(50% - 20px);
-             opacity: 0.4;
-         }
+                           .color-block-icon-person .color-block-text:after {
+                               content: '';
+                               display: block;
+                               width: 70px;
+                               height: 70px;
+                               position: absolute;
+                               background: url(https://image.ibb.co/nv13dV/icons.png) no-repeat;
+                               background-position: -60px -10px;
+                               right: 40px;
+                               top: calc(50% - 20px);
+                               opacity: 0.4;
+                           }
+                           body{
+                      font-family: Arial, Helvetica, sans-serif;
+                      font-size: 13px;
+                  }
+
+                  .card {
+              box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+              margin-bottom: 1rem;
+          }
+          .card {
+              position: relative;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-direction: column;
+              flex-direction: column;
+              min-width: 0;
+              word-wrap: break-word;
+              background-color: #fff;
+              background-clip: border-box;
+              border: 0 solid rgba(0,0,0,.125);
+              border-radius: 0.25rem;
+          }
+          .info, .success, .warning, .error, .validation {
+        vertical-align:miidle;
+              border: 3px solid ;
+              margin: 10px 40px;
+              padding: 15px 10px 15px 50px;
+              background-repeat: no-repeat;
+              background-position: 10px center;
+          }
+
+          .warning {
+              color: #9F6000;
+              background-color: #FEEFB3;
+              background-image: url('https://i.imgur.com/Z8q7ww7.png');
+          }
+
 
     </style>
     <meta charset="utf-8">
@@ -244,50 +276,60 @@
     <br />
     <br />
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-4">
-                <div class="color-block-wrapper">
-                    <div class="color-block color-block-lblue color-block-icon-list">
-                        <div class="color-block-head">
-                            E-Mail ile gönder
-                        </div>
-                        <div class="color-block-text">
-                           @ViewBag.Email
-                        </div>
+        @{
+            if (ViewBag.IsError == true)
+            {
+                <div class="warning">
+                    <p>
+                        Kullanıcı Bilgileri Sistemde Yok!
+
+                    </p>
+                </div>
+
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <div class="color-block-wrapper">
+                            <div class="color-block color-block-lblue color-block-icon-list">
+                                <div class="color-block-head">
+                                    E-Mail ile gönder
+                                </div>
+                                <div class="color-block-text">
+                                    @ViewBag.Email
+                                </div>
+                            </div>
+                            <div class="color-block-bottom">
+                                <button class="btn btn-block btn-outline-danger btn-xs">Gönder</button>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                    <div class="color-block-bottom">
-                        <button class="btn btn-block btn-outline-danger btn-xs">Gönder</button>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="color-block-wrapper">
+                            <div class="color-block color-block-dblue color-block-icon-person">
+                                <div class="color-block-head">
+                                    Telefonuma gönder
+                                </div>
+                                <div class="color-block-text">
+                                    <div>
+                                        <p> @ViewBag.PhoneNumber </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="color-block-bottom">
+                                <button class="btn btn-block btn-danger">Gönder</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                <div class="color-block-wrapper">
-                    <div class="color-block color-block-dblue color-block-icon-person">
-                        <div class="color-block-head">
-                            Telefonuma gönder
-                        </div>
-                        <div class="color-block-text">
-                            <div>
-                               <p> @ViewBag.PhoneNumber </p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="color-block-bottom">
-                        <button class="btn btn-block btn-danger">Gönder</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-@*@code{
-   
-    private List<Person>persons;
-    protected override  void OnInitialized(){
-        persons = db.Persons.ToList();
+            }
+        }
 
-    }
+        @*<div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        This is an alert box.*@
+    </div>
 
-}*@
 </body>
 </html>

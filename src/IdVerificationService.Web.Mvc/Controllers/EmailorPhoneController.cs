@@ -27,23 +27,35 @@ namespace IdVerificationService.Web.Controllers
         {
             _nviAppService = nviAppService;
         }
+      
 
         public IActionResult Index(string auth)
         {
+            ViewBag.IsError = false;
+
             try
             {
                 var data = JsonConvert.DeserializeObject<KimlikBilgileriniDogrulaInput>(Services.NviAppService.Decrypt(HttpUtility.UrlDecode(auth)));
                 var personData = _nviAppService.GetPersonByCitizenId(data.CitizenId);
+                if (personData != null)
+                {
+                    ViewBag.Email = personData.Email;
+                    ViewBag.PhoneNumber = personData.PhoneNumber;
 
-                ViewBag.Email = personData.Email;
-                ViewBag.PhoneNumber = personData.PhoneNumber;
-
-                return View();
+                    return View();
+                }
+                else 
+                {
+                    ViewBag.IsError = true;
+                    return View();
+                }
+                        
             }
             catch
             {
                 return Redirect("/Validation");
             }
+
 
         }
     }
