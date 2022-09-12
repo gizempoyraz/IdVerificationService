@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ using System.Web;
 
 namespace IdVerificationService.Services
 {
-    public class NviAppService: IdVerificationServiceAppServiceBase, INviAppService
+    public class NviAppService : IdVerificationServiceAppServiceBase, INviAppService
     {
         private readonly IRepository<Person, int> _personRepository;
 
@@ -29,13 +30,30 @@ namespace IdVerificationService.Services
             return ObjectMapper.Map<PersonDto>(person);
         }
 
+        public async Task<bool> SendEmail(string email)
+        {
+
+           
+
+
+
+
+            return true;
+        }
+
+        public async Task<bool> SendPhoneMessage(string phoneNumber)
+        {
+
+            return false;
+        }
+
         public async Task<string> KimlikBilgileriniDogrula(KimlikBilgileriniDogrulaInput input)
         {
             try
             {
 
                 ServiceNvi.KPSPublicSoapClient servis = new ServiceNvi.KPSPublicSoapClient(ServiceNvi.KPSPublicSoapClient.EndpointConfiguration.KPSPublicSoap);
-                ServiceNvi.TCKimlikNoDogrulaResponse res = await servis.TCKimlikNoDogrulaAsync(input.CitizenId, input.Name, input.Surname,input.BirthYear);
+                ServiceNvi.TCKimlikNoDogrulaResponse res = await servis.TCKimlikNoDogrulaAsync(input.CitizenId, input.Name, input.Surname, input.BirthYear);
 
                 if (res.Body.TCKimlikNoDogrulaResult)
                 {

@@ -15,6 +15,7 @@ using Abp.Domain.Repositories;
 using IdVerificationService.Services;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net.Mail;
 
 namespace IdVerificationService.Web.Controllers
 {
@@ -34,7 +35,8 @@ namespace IdVerificationService.Web.Controllers
         public IActionResult Index(string auth)
         {
             ViewBag.IsError = false;
-
+         
+       
             try
             {
                 var data = JsonConvert.DeserializeObject<KimlikBilgileriniDogrulaInput>(Services.NviAppService.Decrypt(HttpUtility.UrlDecode(auth)));
@@ -42,7 +44,7 @@ namespace IdVerificationService.Web.Controllers
                 if (personData != null)
                 {
                     if (string.IsNullOrEmpty(personData.Email) || !personData.Email.Contains('@'))
-                        return email;
+                        return Redirect("/Validation");
 
                     string[] emailArr = personData.Email.Split('@');
                     string domainExt = Path.GetExtension(personData.Email);

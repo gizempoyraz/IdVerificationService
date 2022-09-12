@@ -11,5 +11,7 @@ namespace IdVerificationService.Services
     {
         Task<string> KimlikBilgileriniDogrula(KimlikBilgileriniDogrulaInput input);
         PersonDto GetPersonByCitizenId(long citizenId);
+        Task<bool> SendEmail(string email);
+        Task<bool> SendPhoneMessage(string phoneNumber);
     }
 }

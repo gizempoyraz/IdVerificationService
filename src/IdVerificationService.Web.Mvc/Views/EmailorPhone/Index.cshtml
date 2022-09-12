@@ -1,4 +1,5 @@
-﻿@{
+﻿@inject IdVerificationService.Timing.AppTimes AppTimes
+@{
     ViewBag.Title = "Transkript Gönderme";
 
 }
@@ -7,7 +8,14 @@
 @{
     Layout = null;
 }
-
+@*@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "bn632-hover", action = "" }))
+{
+    if (ViewBag.Success == true)
+    {
+        <span>Mesajınız başarıyla gönderilmiştir.</span>
+    }
+}
+*@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -17,10 +25,10 @@
         }
         /* main */
         /* .header {
-                                    align-content: center;
-                                    width: 70%;
-                                    background-color: #b0e0e6;
-                                }*/
+                                                                                                                                                                                                                                    align-content: center;
+                                                                                                                                                                                                                                    width: 70%;
+                                                                                                                                                                                                                                    background-color: #b0e0e6;
+                                                                                                                                                                                                                                }*/
 
         html {
             font-family: 'Roboto', sans-serif;
@@ -29,7 +37,7 @@
 
 
         /* buttons */
-       
+
         .bn632-hover {
             width: 160px;
             font-size: 16px;
@@ -61,40 +69,40 @@
             }
 
             .bn632-hover.bn28 {
-                background-image: linear-gradient( to right, #b81515, #f15e64, #e14e53, #e2373f );
+                background-image: linear-gradient( to right, #a90f1e, #f15e64, #e14e53, #e2373f );
                 box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
             }
-            
+
 
         /* .btn-transparent-lblue,
-                                                                                                                   a.btn-transparent-lblue {
-                                                                                                                       border: 1px solid;
-                                                                                                                       color: #005bb7;
-                                                                                                                       background: transparent;
-                                                                                                                       &:hover
+                                                                                                                                                                                                                                                                                                                   a.btn-transparent-lblue {
+                                                                                                                                                                                                                                                                                                                       border: 1px solid;
+                                                                                                                                                                                                                                                                                                                       color: #005bb7;
+                                                                                                                                                                                                                                                                                                                       background: transparent;
+                                                                                                                                                                                                                                                                                                                       &:hover
 
-                                                                                                                   {
-                                                                                                                       border: 1px solid #005bb7;
-                                                                                                                       color: #fff;
-                                                                                                                       background: #005bb7;
-                                                                                                                   }
+                                                                                                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                                                                                                       border: 1px solid #005bb7;
+                                                                                                                                                                                                                                                                                                                       color: #fff;
+                                                                                                                                                                                                                                                                                                                       background: #005bb7;
+                                                                                                                                                                                                                                                                                                                   }
 
-                                                                                                                   }*/
+                                                                                                                                                                                                                                                                                                                   }*/
 
         /*.btn-transparent,
-                                                                                                                   a.btn-transparent {
-                                                                                                                       border: 1px solid #004387;
-                                                                                                                       color: #004387;
-                                                                                                                       background: transparent;
-                                                                                                                       &:hover
+                                                                                                                                                                                                                                                                                                                   a.btn-transparent {
+                                                                                                                                                                                                                                                                                                                       border: 1px solid #004387;
+                                                                                                                                                                                                                                                                                                                       color: #004387;
+                                                                                                                                                                                                                                                                                                                       background: transparent;
+                                                                                                                                                                                                                                                                                                                       &:hover
 
-                                                                                                                   {
-                                                                                                                       border: 1px solid #004387;
-                                                                                                                       color: #fff;
-                                                                                                                       background: #004387;
-                                                                                                                   }
+                                                                                                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                                                                                                       border: 1px solid #004387;
+                                                                                                                                                                                                                                                                                                                       color: #fff;
+                                                                                                                                                                                                                                                                                                                       background: #004387;
+                                                                                                                                                                                                                                                                                                                   }
 
-                                                                                                                   }*/
+                                                                                                                                                                                                                                                                                                                   }*/
 
         /* cards */
         .color-block-wrapper {
@@ -176,7 +184,7 @@
         }
 
         .color-block-dblue {
-            background: #800000;
+            background: #a90f1e;
             opacity: 0.7;
             &:before
 
@@ -265,13 +273,15 @@
             padding: inherit;
         }
 
+        .container1 {
+            text-align: center;
+        }
+
         #logo {
             line-height: 80px;
             height: 80px;
             text-align: center;
         }
-        
-
     </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -282,6 +292,63 @@
     <link rel="icon" type="image/png" href="https://www.koc.k12.tr/wp-content/themes/kocschool/favicon-16x16.png"
           sizes="16x16" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      @*core scripts start*@
+    <script src="~/libs/jquery/jquery.js" asp-append-version="true"></script>
+    @*core scripts end*@
+
+    @*admin-lte scripts start*@
+    <script src="~/libs/bootstrap/dist/js/bootstrap.bundle.js" asp-append-version="true"></script>
+    <script src="~/libs/datatables/js/jquery.dataTables.min.js" asp-append-version="true"></script>
+    <script src="~/view-resources/Views/_Bundles/helpers.min.js" asp-append-version="true"></script>
+    <script src="~/view-resources/Views/_Bundles/datatables.ajax.min.js" asp-append-version="true"></script>
+    <script src="~/libs/datatables/js/dataTables.bootstrap4.min.js" asp-append-version="true"></script>
+    <script src="~/libs/datatables/js/dataTables.responsive.min.js" asp-append-version="true"></script>
+    <script src="~/libs/datatables/js/responsive.bootstrap4.min.js" asp-append-version="true"></script>
+    <script src="~/libs/datatables/js/dataTables.buttons.js" asp-append-version="true"></script>
+    <script src="~/libs/datatables/js/buttons.bootstrap4.js" asp-append-version="true"></script>
+    <script src="~/libs/admin-lte/dist/js/adminlte.js" asp-append-version="true"></script>
+    @*admin-lte scripts end*@
+
+    @*abp scripts start*@
+    <script src="~/libs/block-ui/jquery.blockUI.js" asp-append-version="true"></script>
+    <script src="~/libs/spin/spin.js" asp-append-version="true"></script>
+    <script src="~/libs-ext/spin/jquery.spin.js" asp-append-version="true"></script>
+    <script src="~/libs/sweetalert/sweetalert.min.js" asp-append-version="true"></script>
+    <script src="~/libs/toastr/toastr.min.js" asp-append-version="true"></script>
+    <script src="~/libs/moment/moment-with-locales.js" asp-append-version="true"></script>
+    <script src="~/libs/signalr/dist/browser/signalr.js" asp-append-version="true"></script>
+    <script src="~/libs/abp-web-resources/Abp/Framework/scripts/abp.js" asp-append-version="true"></script>
+    <script src="~/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js" asp-append-version="true"></script>
+    <script src="~/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js" asp-append-version="true"></script>
+    <script src="~/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js" asp-append-version="true"></script>
+    <script src="~/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js" asp-append-version="true"></script>
+    <script src="~/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js" asp-append-version="true"></script>
+    <script src="~/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js" asp-append-version="true"></script>
+    @*abp scripts end*@
+
+    @*other scripts start*@
+    <script src="~/libs/jquery-validate/jquery.validate.js" asp-append-version="true"></script>
+    <script src="~/libs/jquery-validate/jquery.validate.unobtrusive.js" asp-append-version="true"></script>
+    <script src="~/libs/push.js/push.js" asp-append-version="true"></script>
+    @*other scripts end*@
+
+    @*custom scripts start*@
+    <script src="~/js/abp.dataTable.js" asp-append-version="true"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    @*custom scripts end*@
+    
+    <script type="text/javascript">
+        // This is used to get the application's root path from javascript.
+        // It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {};
+        abp.appPath = '@ApplicationPath';
+    </script>
+   
+    <script src="~/AbpServiceProxies/GetAll?v=@(AppTimes.StartupTime.Ticks)" type="text/javascript"></script>
+
+
+     <script src="~/view-resources/Views/EmailorPhone/Index.js" asp-append-version="true"></script>
+
 </head>
 <body>
     <div id="logo">
@@ -293,50 +360,58 @@
         @{
             if (ViewBag.IsError == true)
             {
-                                                        <div class="warning">
-                                                            <p>
-                                                                Kullanıcı Bilgileri Sistemde Yok!
+                <div class="warning">
+                    <p>
+                        Kullanıcı Bilgileri Sistemde Yok!
 
-                                                            </p>
-                                                        </div>
+                    </p>
+                </div>
 
             }
             else
             {
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-md-4">
-                                                                <div class="color-block-wrapper">
-                                                                    <div class="color-block color-block-lblue color-block-icon-list">
-                                                                        <div class="color-block-head">
-                                                                            E-Mail ile gönder
-                                                                        </div>
-                                                                        <div class="color-block-text">
-                                                                            @ViewBag.Email
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="color-block-bottom">
-                                                                        <button class="bn632-hover bn28">Gönder</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xs-12 col-md-4">
-                                                                <div class="color-block-wrapper">
-                                                                    <div class="color-block color-block-dblue color-block-icon-person">
-                                                                        <div class="color-block-head">
-                                                                            Telefonuma gönder
-                                                                        </div>
-                                                                        <div class="color-block-text">
-                                                                            <div>
-                                                                                <p> @ViewBag.PhoneNumber </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="color-block-bottom">
-                                                                        <button class="bn632-hover bn28">Gönder</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <div class="color-block-wrapper">
+                            <div class="color-block color-block-lblue color-block-icon-list">
+                                <div class="color-block-head">
+                                    E-Mail ile gönder
+                                </div>
+                                <div class="color-block-text">
+                                    @ViewBag.Email
+                                </div>
+
+                            </div>
+                            <div class="color-block-bottom">
+                                <button id="btn1" class="bn632-hover bn28">Gönder</button>
+                            </div>
+
+                        </div>
+                        <script>
+                           
+                        </script>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="color-block-wrapper">
+                            <div class="color-block color-block-dblue color-block-icon-person">
+                                <div class="color-block-head">
+                                    Telefonuma gönder
+                                </div>
+                                <div class="color-block-text">
+                                    <div>
+                                        <p> @ViewBag.PhoneNumber </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="color-block-bottom">
+                                <button id="btn2" class="bn632-hover bn28">Gönder</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             }
         }
 
@@ -344,6 +419,12 @@
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
         This is an alert box.*@
     </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/libs/jquery/jquery.js"></script>
+
+    <script src="~/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/libs/admin-lte/dist/js/adminlte.js"></script>
 
 </body>
 </html>
